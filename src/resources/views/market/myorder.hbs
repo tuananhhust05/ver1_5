@@ -87,93 +87,91 @@ const createElementFromString = (string) => {
     return el.firstChild;  // trả về con đầu tiên 
 };
 
-const CONTRACT_ADDRESS_manage_order="0xe5a36ed08494504CA3e27D6269fe82c096770E2F";
+const CONTRACT_ADDRESS_manage_order="0x83923F4Be443fc37595716013B798D40cD7e154C";
 const CONTRACT_ABI_manage_order=[
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "OrderList",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "addressuser",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "link_course",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "link_image",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "name_author",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "name_product",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "price",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "a",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "b",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "c",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "d",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "e",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "f",
-          "type": "string"
-        }
-      ],
-      "name": "Buy",
-      "outputs": [],
-      "stateMutability": "payable",
-      "type": "function",
-      "payable": true
-    }
-  ];
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "a",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "b",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "c",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "d",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "e",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "f",
+				"type": "string"
+			}
+		],
+		"name": "Buy",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "OrderList",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "addressuser",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "link_course",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "link_image",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "name_author",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "name_product",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "price",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
  
   const web3= new Web3(
     Web3.givenProvider|| 'HTTP://127.0.0.1:7545'
