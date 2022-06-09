@@ -1,0 +1,53 @@
+{
+    "name":"Vũ Ngọc Huy",
+    "namecourse":"Blockchain căn bản",
+    "titlecourse":"Khóa học sẽ giúp bạn nắm được các kiến thức cơ bản về blockchain,cách tạo ra 1 dapp sử dụng công nghệ blockchain",
+    "new_price":"399,000",
+    "old_price":"600,000",
+    "sale_off":"58",
+    "time_course":"3 giờ 22 phút",
+    "course_document":"31 bài giảng",
+
+    "what_you_learn_1_title":"Tư duy đúng trong đầu tư coin",
+    "what_you_learn_2_title":"Hiểu được 04 nguồn thu nhập từ đầu tư",
+    "what_you_learn_3_title":"Nắm được kiến thức cơ bản về blockchain",
+    "what_you_learn_4_title":"Tránh được những rủi ro, cạm bẫy trên TT",
+    "what_you_learn_5_title":"Chiến lược đầu tư tạo thu nhập",
+    "what_you_learn_6_title":"Có khả năng tự xây dựng 1 dapp",
+   
+    "course_introduction1_1":"Bạn là người mới bắt đầu học làm quen với blockchain?",
+    "course_introduction1_2":"Bạn chưa có nhiều kiến thức hay kinh nghiệm về web3",
+    "course_introduction1_3":"Bạn muốn tăng thu nhập nhanh chóng từ phát triển phần mềm?",
+    "course_introduction1_4":"Hay bạn muốn đầu tư cổ phiếu nhưng không biết lựa chọn loại coin và thời điểm mua vào để sinh lợi?",
+    "course_introduction1_5":"Bạn đang tìm kiếm một khóa học  phù hợp nhưng không biết tìm ở đâu?",
+    "course_introduction2":"Ứng dụng được biết đến và thảo luận nhiều nhất về công nghệ Blockchain chính là đồng tiền điện tử. Bitcoin là một đơn vị tiền tệ kỹ thuật số với mã là BTC, cũng giống như đô la Mỹ bản thân nó không mang giá trị, nó chỉ có giá trị bởi vì có một cộng đồng đồng ý sử dụng nó làm đơn vị giao dịch hàng hóa và dịch vụ.Để theo dõi số lượng Bitcoin mà mỗi người sở hữu trong các tài khoản nhất định và theo dõi các giao dịch phát sinh từ đó thì chúng ta cần đến một cuốn sổ kế toán, trong trường hợp này nó chính là Blockchain và đây thực tế là một tệp kỹ thuật số theo dõi tất cả các giao dịch Bitcoin.",
+    
+    "course_content_p1":"Phần 1: Giới thiệu về blockchain",
+    "course_content_p1_1":
+        {
+            "name_leture":"Bài 1: Giới thiệu về thuật toán",
+            "time":"3:52"
+        }
+    ,
+    "course_content_p1_2":
+        {
+            "name_leture":"Bài 2: Viết smart contract",
+            "time":"4:76"
+        }
+    ,
+    "course_content_p2":"Phần 2: Giới thiệu về web3js",
+    "course_content_p1_3":
+        {
+            "name_leture":"Bài 3: Viết chương trình đầu tiên với web3js",
+            "time":"3:52"
+        }
+    ,
+    "course_content_p1_4":
+        {
+            "name_leture":"Bài 4: Viết 1 dapp hoàn chỉnh cùng với web3js ",
+            "time":"8:52"
+        }
+    ,
+    "infomation_teacher":"Phát triển giáo dục là ưu tiên hàng đầu và tiền đề giúp đào tạo lớp trí thức - yếu tố cơ bản để phát triển xã hội, tăng trưởng kinh tế nhanh và bền vững. Bởi vậy, TS. Vũ Ngọc Huy cho rằng ứng dụng công nghệ Blockchain trong quản lý giáo dục là cần thiết. Đây cũng là cơ hội giúp nhìn thấy được tiềm năng của việc ứng dụng công nghệ Blockchain trong một lĩnh vực cụ thể khác."
+    
+}

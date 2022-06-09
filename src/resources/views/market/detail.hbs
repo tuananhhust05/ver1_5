@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!--jquery quan trọng-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <!--Icon--> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" type="text/css" href="css/detail.css"/>
+    </head>
+    <body>   
+            <!--Những thằng dùng link truyền thông tin thường không xác định; không dẫn đc link static-->
+            <style>
+                @import url(https://fonts.google.com/specimen/Macondo);
+/*CSS header*/
+.formal_infomation_course{
+    background-color: #06345C;
+    height: 200px;
+    width:100%;
+    color:white;
+    padding-top:2%;
+}
+.formal_infomation_course h2{
+    margin-left:7%;
+    font-weight:700;
+    color:white;
+}
+.formal_infomation_course p{
+    margin-left:7%;
+    width:50%;
+}
+.formal_infomation_course  .evaluate{
+    margin-left:7%;
+    margin-top:3%;
+    cursor:pointer;
+}
+.formal_infomation_course  .evaluate img{
+    width:20px;
+    height:20px;
+    border-radius:100%;
+    display:inline-block;
+}
+.formal_infomation_course  .evaluate p{
+    margin-left:0.3%;
+    display:inline-block;
+    font-weight:500;
+}
+.formal_infomation_course  .evaluate i{
+   color: yellow;
+}
+
+
+/*Phần đăng ký thanh toán*/
+.register_learn{
+    height:750px !important;
+    width:30%;
+    margin-top:-10%;
+    left:60%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #E8E8E8;
+    padding-top:30px;
+
+}
+.register_learn .dong1{
+    margin-top:15px;
+    margin-left:15px;
+}
+.register_learn .dong1 .p1{
+    display:inline-block;
+}
+.register_learn .dong1 .p1 p{
+   font-size: 35px;
+   font-weight: 500;
+   color:black;
+   display:inline-block;
+}
+.register_learn .dong1 .p1 .p11{
+    margin-top:7px;font-size:15px;position:absolute;
+}
+.register_learn .dong1 .p2{
+    display:inline-block;
+    margin-left:3%;
+}
+.register_learn .dong1 .p21{
+    display:inline-block;
+    font-size: 20px;
+}
+.register_learn .dong1 .p22{
+    display:inline-block;
+    font-size: 10px;
+    position:absolute;
+    margin-top:0.5%;
+}
+.register_learn .dong1 .p23{
+    display:inline-block;
+    color:black;
+    position:absolute;
+    width:70px;
+    margin-left:-70px;
+    
+}
+.register_learn .dong1 .p3{
+    display:inline-block;
+    margin-left: 2%;
+}
+.register_learn .dong2{
+    margin-top:1%;
+    margin-left:15px;
+}
+.register_learn .dong2 p{
+    font-size:15px;
+    font-weight: 700;
+    display:inline-block;
+    color:#006400;
+}
+.register_learn .dong2 i{
+    font-size:15px;
+    font-weight: 700;
+    display:inline-block;
+    margin-left: 0.5%;
+    color:#006400;
+}
+.register_learn .dong3{
+    margin-left:15px;
+    margin-right:15px;
+}
+.register_learn .dong3 .dong33{
+    width:100%;
+    font-weight: 700;
+    font-size: 20px;
+}
+.register_learn .dong4{
+    margin-left:15px;
+    margin-right:15px;
+    margin-top:1%;
+}
+.register_learn .dong4 i{
+    font-weight: 700;
+    font-size: 20px;
+    margin-left:2px;
+}
+.register_learn .dong4 .dong41{
+    width:100%;
+    font-weight: 700;
+    font-size: 20px;
+}
+.register_learn .dong5{
+    font-size: 10px;
+    text-align: center;
+    margin-top:3px;
+}
+.register_learn .dong6{
+    margin-left:15px;
+    margin-right:15px;
+    margin-top:4%;
+}
+.register_learn .dong6 i{
+   margin-right:10px;
+   display:inline-block;
+}
+.register_learn .dong6 .p61{
+    margin-right:10px;
+    display:inline-block;
+}
+.register_learn .dong6 .p62{
+    margin-right:10px;
+    display:inline-block;
+    font-weight:600;
+}
+.register_learn .dong7 {
+    margin-top:-2%;
+}
+.register_learn .dong8{
+    margin-left:15px;
+    margin-right:15px;
+    margin-top:-2%;
+}
+.register_learn .dong8 p{
+    display:inline-block;
+}
+.register_learn .dong8 i{
+    display:inline-block;
+    margin-right:10px;
+}
+.register_learn  .dong9{
+    cursor:pointer;
+    margin-top:5%;
+    color:#7B68EE;
+    text-align: center;
+}
+.register_learn .dong10{
+    margin-left:15px;
+    margin-right:15px;
+    margin-bottom:7%;
+}
+.register_learn .dong10 .dong10_1{
+    display:inline-block;
+    margin-right:10px;
+    width:250px;
+    border-radius: 3px;
+}
+.register_learn .dong10 .dong10_2{
+    display:inline-block;
+}
+.register_learn .dong11{
+    font-weight: 500;
+    margin-left:15px;
+    margin-right:15px;
+}
+.register_learn .dong12{
+    margin-left:15px;
+    margin-right:15px;
+}
+.register_learn .dong13{
+    margin-left:15px;
+    margin-right:15px;
+    border-radius: 20px;
+    width:90%;
+}
+
+/*Phần video*/
+.introductionvideo{
+    margin-left:7%;
+    width:50%;
+    height:520px;
+    margin-top:-38%;
+}
+.introductionvideo .video{
+    width:100%;
+    height:450px;
+}
+.introductionvideo .video img{
+    width:100%;
+    height:450px;
+}
+.introductionvideo .dong1{
+    margin-top: -58%;
+    margin-left:2%;
+}
+.introductionvideo .dong1 .dong1_1{
+    display:inline-block;
+}
+.introductionvideo .dong1 .dong1_1 .p1{
+    font-size:40px;
+    color:white;
+    font-family:'Macondo';
+    background-color: #000080;
+    border-radius: 100%;
+    font-weight: 900;
+    text-align: center;
+    width:50px;
+    height:50px;
+    display:inline-block;
+}
+.introductionvideo .dong1 .dong1_1 .p2{
+    display:inline-block;
+    font-size:20px;
+    margin-left:5px;
+    color:white;
+}
+.introductionvideo .dong1 .dong1_2{
+    display:inline-block;
+    margin-left: 35%;
+}
+.introductionvideo .dong1 .dong1_2 i{
+    color:white;
+    margin-left: 32%;
+}
+.introductionvideo .dong1 .dong1_2 p{
+    color:white;
+}
+.introductionvideo .dong1 .dong1_2 p:hover{
+    color:#C0C0C0;
+    cursor:pointer;
+}
+.introductionvideo a{
+    color:rgba(32,90,167,0.7)
+}
+.introductionvideo a .youtube{
+    font-size:100px; /*icon dùng font-size*/
+    margin-left:40%;
+    margin-top:10%;
+}
+.introductionvideo a .youtube:hover{
+    color:red;
+    background-color: white;
+    border-radius: 20px;  
+    cursor:pointer; 
+}
+
+/*title course*/
+.title_course{
+    margin-left:7%;
+    width:50%;
+    height:50px;
+    margin-top:-4%;
+    box-shadow: 2px 2px 2px #C0C0C0;
+}
+.title_course .p1{
+    text-align: center;
+    width:15%;
+    height:50px;
+    padding-top: 10px;
+    font-weight:700;
+    display:inline-block;
+}
+.title_course .p2{
+    text-align: center;
+    width:25%;
+    height:50px;
+    padding-top: 10px;
+    font-weight:700;
+    display:inline-block;
+}
+.title_course .p3{
+    text-align: center;
+    width:25%;
+    height:50px;
+    padding-top: 10px;
+    font-weight:700;
+    display:inline-block;
+}
+.title_course .p1:hover{
+    background-color: #C0C0C0;
+    cursor:pointer;
+}
+.title_course .p2:hover{
+    background-color: #C0C0C0;
+    cursor:pointer;
+}
+.title_course .p3:hover{
+    background-color: #C0C0C0;
+    cursor:pointer;
+}
+
+/*What you learn*/
+.what_you_learn{
+    margin-left:7%;
+    width:50%;
+    height:25%; /*350px*/
+    box-shadow: 2px 2px 2px #C0C0C0;
+}
+.what_you_learn .dong1{
+    margin-top:3%;
+    margin-left:2%;
+    font-weight:700;
+    font-size: 20px;
+}
+.what_you_learn .cot1{
+    display:inline-block;
+    width:45%;
+    margin-right:5%;
+}
+.what_you_learn .cot1 .cot1_1 i{
+    display:inline-block;
+    color:#006400;
+    font-weight:900;
+    margin-right:2%;
+}
+.what_you_learn .cot1 .cot1_1 p{
+    display:inline-block;
+    margin-top:-3%;
+}
+.what_you_learn .cot2{
+    display:inline-block;
+    width:45%;
+}
+.what_you_learn .cot2 .cot2_1 i{
+    display:inline-block;
+    color:#006400;
+    font-weight:900;
+    margin-right:2%;
+}
+.what_you_learn .cot2 .cot2_1 p{
+    display:inline-block;
+    margin-top:-3%;
+}
+
+/*Giới thiệu khóa học*/
+.introduction_course_detail{
+    margin-left:7%;
+    width:50%;
+    height:50px;
+    box-shadow: 2px 2px 2px #C0C0C0;
+}
+.introduction_course_detail .dong1{
+    margin-top:3%;
+    margin-left:2%;
+    font-weight:700;
+    font-size: 20px;
+}
+.introduction_course_detail .content{
+    box-shadow: 2px 2px 2px #C0C0C0;
+    padding-top:5%;
+}
+.introduction_course_detail .content .dong2{
+    margin-top:2%;
+    margin-left:15px;
+    margin-right:15px;
+}
+.introduction_course_detail .content .dong2_1{
+    margin-top:0.1%;
+    margin-top:2%;
+    margin-left:15px;
+    margin-right:15px;
+}
+.introduction_course_detail .content .dong3{
+    font-weight:900;
+    margin-left:15px;
+    margin-right:15px;
+}
+.introduction_course_detail .content .dong4{
+    margin-left:15px;
+    margin-right:15px;
+}
+
+/*Nội dung khóa học*/
+.detail_content_course{
+    margin-top:40%;
+    margin-left:7%;
+    width:50%;
+    box-shadow: 2px 2px 2px #C0C0C0;
+}
+.detail_content_course .dong1{
+    margin-left:3%;
+    font-weight:700;
+    font-size:25px;
+}
+.detail_content_course .dong2 i{
+    display:inline-block;
+}
+.detail_content_course .dong2 p{
+    display:inline-block;
+    font-weight: 600;
+}
+.detail_content_course .dong3{
+    margin-top:2%;
+}
+.detail_content_course .dong3 .dong3_1{
+    display:inline-block;
+    margin-left: 2%;
+}
+.detail_content_course .dong3 .dong3_2{
+    display:inline-block;
+    
+}
+.detail_content_course .dong3 .dong3_3{
+    display:inline-block;
+    font-weight: 500;
+    color:blue;
+    margin-left: 15%;
+}
+.detail_content_course .dong3 .dong3_4{
+    display:inline-block;
+    margin-left: 35%;
+}
+
+.detail_content_course .dong3 .dong3_3_test{
+    display:inline-block;
+    font-weight: 500;
+    color:blue;
+    margin-left: 19.2%;
+}
+.detail_content_course .dong4{
+    margin-top:2%;
+}
+.detail_content_course .dong4 .dong4_1{
+    display:inline-block;
+    margin-left: 2%;
+}
+.detail_content_course .dong4 .dong4_2{
+    display:inline-block;
+}
+.detail_content_course .dong4 .dong4_4{
+    display:inline-block;
+    margin-left: 45%;
+}
+.detail_content_course .dong4 .dong4_4_2{
+    display:inline-block;
+    margin-left: 42.5%;
+}
+
+/*Thông tin giảng viên*/
+.infomation_teacher{
+    margin-left:7%;
+    margin-top:3%;
+    width:50%;
+    box-shadow: 2px 2px 2px #C0C0C0;
+}
+.infomation_teacher .dong1{
+    margin-left:3%;
+    font-weight:700;
+    font-size:25px;
+}
+.infomation_teacher  .cot1{
+    display:inline-block;
+}
+.infomation_teacher  .cot1 img{
+   width:200px;
+   height:200px;
+   border-radius: 100%;
+}
+.infomation_teacher .cot1 .cot1_1 i{
+    display:inline-block;
+    margin-left:3%;
+}
+.infomation_teacher .cot1 .cot1_1 .p1{
+    display:inline-block;
+    font-weight:700;
+}
+.infomation_teacher .cot1 .cot1_1 .p2{
+    display:inline-block;
+}
+.infomation_teacher .cot1 .cot1_2 i{
+    display:inline-block;
+    margin-left:3%;
+}
+.infomation_teacher .cot1 .cot1_2 .p1{
+    display:inline-block;
+    font-weight:700;
+}
+.infomation_teacher  .cot1 .cot1_2 .p2{
+    display:inline-block;
+}
+.infomation_teacher  .cot2{
+    display:inline-block;
+    width:50%;
+    margin-left:15%;
+}
+.infomation_teacher  .cot2 .p1{
+    color:#6495ED;
+    font-size:25px;
+    font-weight: 700;
+}
+.infomation_teacher  .cot2 .p2{
+    font-style: italic;
+}
+.infomation_teacher  .cot2 .p3{
+    margin-top:5%;
+}
+.infomation_teacher  .cot2 .b1{
+    width:90%;
+    color:white;
+    margin-top:3%;
+    margin-bottom:3%;
+}
+footer{
+    margin-top:5%;
+}
+            </style>
+            
+            <!--header-->
+            <nav class="navbar navbar-expand-lg navbar-primary bg-primary sticky-top">
+            <ul class="navbar-nav mr-auto"style="margin-left:95px">
+                <li class="nav-item active">
+                    <style>@import url(https://fonts.google.com/specimen/Macondo);</style>
+                    <!--căn phải chọn thằng mà căn-->
+                    <a class="navbar-brand" href="/"style="font-size:30px;color:white;font-family:'Macondo';">@SMCS</a>
+                </li>
+                
+                
+                
+                </ul>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0"style="margin-right:18%">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"style="color:white;border-color:#B0E0E6;margin-right:5px">
+                    <i class="fa-solid fa-magnifying-glass"style="transform:rotate(90deg);"></i>
+                    </button>
+                <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm khóa học, sản phẩm" aria-label="Search"style="width:400px">
+                <button type="button" class="btn btn-success"style="margin-left:120px"><i class="fa-solid fa-registered"style="margin-right:2px"></i>Đăng ký </button>
+                <button type="button" class="btn btn-danger"style="margin-left:10px"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Đăng nhập</button>
+                </form>
+
+                
+            </div>
+            </nav>
+
+
+
+            <nav id="navbar-example2" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">  <!--id quan trọng để tham chiếu dữ liệu-->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown" style="margin-left:35%">
+                    <a class="nav-link dropdown-toggle"style="margin-top:2px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Products
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
+                    
+                    <a class="dropdown-item" href="#scrollspyHeading1">Business</a>
+                    <a class="dropdown-item" href="#scrollspyHeading2">Science</a>
+                    <a class="dropdown-item" href="#scrollspyHeading3">Technical</a>
+                    <a class="dropdown-item" href="#scrollspyHeading4">Culture</a>
+                    <a class="dropdown-item" href="#scrollspyHeading5">Language</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown"style="margin-left:50px">
+                    <a class="nav-link dropdown-toggle"style="margin-top:2px" href="/myorder" >
+                    My odders
+                    </a>
+                </li>
+            </ul>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+
+            <form class="form-inline my-2 my-lg-0"style="margin-right:31.8%"> 
+                <li class="nav-item dropdown" style="margin-left:35%">
+                    <a class="btn btn-outline-success my-2 my-sm-0" class="nav-link dropdown-toggle"style="margin-top:2px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa-solid fa-file-invoice"></i>
+                    Account 
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
+                    <a class="dropdown-item"id="account" >Business</a>
+                    </div>
+                </li>
+            </form>
+            </nav>
+            
+            <!--Thông tin mở đầu-->
+            <div class="formal_infomation_course">
+                 <h2>{{json.namecourse}}</h2>
+                 <p>{{json.titlecourse}}</p>
+                <div class="evaluate">
+                    <img src="https://st.quantrimang.com/photos/image/072015/22/avatar.jpg" alt="Card image cap">
+                    <p>{{json.name}}</p>
+                    <i class="fa fa-star co-or" style="margin-left:-40%;display:inline-block"></i>
+                    <i class="fa fa-star co-or" style="display:inline-block"></i>
+                    <i class="fa fa-star co-or" style="display:inline-block"></i>
+                    <i class="fa fa-star co-or" style="display:inline-block"></i>
+                    <i class="fa fa-star co-or" style="display:inline-block"></i>
+                    <p>3000 đánh giá</p>
+                    <i class="fa fa-users" style="display:inline-block;color:white;margin-left:-35%"></i>
+                    <p>4438 học viên</p>
+                </div>
+            </div>
+
+            <!--Phần đăng ký thanh toán-->
+            <div class="register_learn sticky-top  "style="height:3000px">
+                <div class="dong1">
+                    
+                    <div class="p1">
+                        <p>{{json.new_price}}</p>
+                        <!--position:absolute rất quan trọng-->
+                        <p class="p11">đ</p>
+                    </div>
+                    <div class="p2">
+                        <p class="p21">{{json.old_price}}</p>
+                        <p class="p22">đ</p>
+                        <hr class="p23">
+                    </div>
+                     <div class="p3">
+                        <p>({{json.sale_off}}%)</p>
+                    </div>
+                </div>
+                <div class="dong2">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i>
+                    <p>Thời gian ưu đãi chỉ còn 1 ngày</p>
+                </div>
+                <div class="dong3">
+                    <button type="button" class="btn btn-danger dong33">Đăng ký học</button>
+                </div>
+                <div class="dong4">
+                    <button type="button" class="btn btn-success dong41">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                        Thêm vào giỏ hàng
+                    </button>
+                </div>
+                <p class="dong5">Hoàn tiền trong 7 ngày nếu không hài lòng</p>
+                <div class="dong6">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i>
+                    <p class="p61">Thời lượng:</p>
+                    <p class="p62">{{json.time_course}}</p>
+                </div>
+                <div class="dong6 dong7">
+                    <i class="fa fa-play-circle" aria-hidden="true"></i>
+                    <p class="p61">Giáo trình:</p>
+                    <p class="p62">{{json.course_document}}</p>
+                </div>
+                <div class="dong8">
+                    <i class="fa fa-history" aria-hidden="true"></i>
+                    <p> Sở hữu khóa học trọn đời</p>
+                </div>
+                <div class="dong8">
+                    <i class="fa fa-certificate" aria-hidden="true"></i>
+                    <p>Cấp chứng nhận hoàn thành</p>
+                </div>
+                <div class="dong8">
+                    <i class="fa fa-percent" aria-hidden="true"></i>
+                    <p>Giảm thêm 20k khi thanh toán online</p>
+                </div>
+                <p class="dong9">Bạn có mã giảm giá?</p>
+                <form class="dong10">
+                    <input placeholder="Nhập mã giảm giá..."class="dong10_1"/>
+                    <button type="button" class="btn btn-light dong10_2">Áp dụng</button>
+                </form>
+                <hr>
+                <p class="dong11">Bạn cần đào tạo trên 5 người?</p>
+                <p class="dong12">Giúp đội nhóm của bạn truy cập hơn 2000+ khóa học trên Unica bất ký lúc nào, bất kỳ đâu</p>
+                <button type="button" class="btn btn-light dong13">Đăng ký tư vấn</button>
+            </div>
+            
+            <!--Phần video-->
+            <div class="introductionvideo">
+                <div class="video">
+                  <img src="https://baoquocte.vn/stores/news_dataimages/dangtuan/012020/09/15/tien-si-tre-vu-ngoc-huy-voi-y-tuong-ung-dung-blockchain.jpg">
+                </div>
+                <div class="dong1">
+                    <div class="dong1_1">
+                      <p class="p1">S</p>
+                      <p class="p2">Tìm hiểu về blockchain_Vũ Ngọc Huy</p>
+                    </div>
+                    <div class="dong1_2">
+                        <i class="fa fa-tachometer" aria-hidden="true"></i>
+                        <p>Xem sau</p>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/">
+                  <i class="fa-brands fa-youtube youtube"></i>
+                </a>
+            </div>
+            <!--title course-->
+            <div class="title_course">
+                <div class="p1">
+                   Giới thiệu
+                </div>
+                <div class="p2">
+                   Nội dung khóa học
+                </div>
+                <div class="p3">
+                   Thông tin giảng viên
+                </div>
+                <div class="p1">
+                   Đánh giá
+                </div>
+
+            </div>
+            
+            <!--Bạn sẽ học được gì-->
+            <div class="what_you_learn">
+               <div class="dong1">Bạn sẽ học được gì</div>
+               <hr>
+               <div class="cot1">
+                   <div class="cot1_1">
+                       <i class="fa-solid fa-check"></i>
+                       <p>{{json.what_you_learn_1_title}}</p>
+                   </div>
+                   <div class="cot1_1">
+                       <i class="fa-solid fa-check"></i>
+                       <p>{{json.what_you_learn_2_title}}</p>
+                   </div>
+                   <div class="cot1_1">
+                       <i class="fa-solid fa-check"></i>
+                       <p>{{json.what_you_learn_3_title}}</p>
+                   </div>
+               </div>
+               <div class="cot2">
+                   <div class="cot2_1">
+                       <i class="fa-solid fa-check"></i>
+                       <p>{{json.what_you_learn_4_title}}</p>
+                   </div>
+                   <div class="cot2_1">
+                       <i class="fa-solid fa-check"></i>
+                       <p>{{json.what_you_learn_5_title}}</p>
+                   </div>
+                   <div class="cot2_1">
+                       <i class="fa-solid fa-check"></i>
+                       <p>{{json.what_you_learn_6_title}}</p>
+                   </div>
+               </div>
+            </div>
+
+            <!--Giới thiệu về khóa học-->
+            <div class="introduction_course_detail">
+                <p class="dong1">Giới thiệu khóa học</p>
+                <div class="content">
+                    <p class="dong2_1">{{json.course_introduction1_1}}</p>
+                    <p class="dong2">{{json.course_introduction1_2}}</p>
+                    <p class="dong2">{{json.course_introduction1_3}}</p>
+                    <p class="dong2">{{json.course_introduction1_4}}</p>
+                    <p class="dong2">{{json.course_introduction1_5}}</p>
+                    <p class="dong3">Bạn đừng quá lo lắng</p>
+                    <p class="dong4">{{json.course_introduction2}}</p>
+                </div>
+            </div>
+
+            <!--Nội dung khóa học-->
+            <div class="detail_content_course">
+                <div class="dong1">
+                    Nội dung khóa học
+                </div>
+                <hr>
+                <div class="dong2">
+                    <i class="fa fa-minus-square" aria-hidden="true"></i>
+                    <p>{{json.course_content_p1}}</p>
+                </div>
+                <div class="dong3">
+                    <div class="dong3_1">
+                        <i class="fa fa-play-circle" aria-hidden="true"></i>
+                    </div>
+                    <div class="dong3_2">
+                        {{json.course_content_p1_1.name_leture}}
+                    </div>
+                    <div class="dong3_3">
+                        Học thử
+                    </div>
+                    <div class="dong3_4">
+                        {{json.course_content_p1_1.time}}
+                    </div>
+                </div>
+                <div class="dong3">
+                    <div class="dong3_1">
+                        <i class="fa fa-play-circle" aria-hidden="true"></i>
+                    </div>
+                    <div class="dong3_2">
+                        {{json.course_content_p1_2.name_leture}}
+                    </div>
+                    <div class="dong3_3_test">
+                        Học thử
+                    </div>
+                    <div class="dong3_4">
+                        {{json.course_content_p1_2.time}}
+                    </div>
+                </div>
+                <hr>
+                <div class="dong2">
+                    <i class="fa fa-minus-square" aria-hidden="true"></i>
+                    <p>{{json.course_content_p2}}</p>
+                </div>
+                <div class="dong4">
+                    <div class="dong4_1">
+                        <i class="fa fa-play-circle" aria-hidden="true"></i>
+                    </div>
+                    <div class="dong4_2">
+                          {{json.course_content_p1_3.name_leture}}
+                    </div>
+                    <div class="dong4_4">
+                        {{json.course_content_p1_3.time}}
+                    </div>
+                </div>
+                <div class="dong4">
+                    <div class="dong4_1">
+                        <i class="fa fa-play-circle" aria-hidden="true"></i>
+                    </div>
+                    <div class="dong4_2">
+                        {{json.course_content_p1_4.name_leture}}
+                    </div>
+                    <div class="dong4_4_2">
+                        {{json.course_content_p1_4.time}}
+                    </div>
+                </div>
+            </div>
+
+            <!--Thông tin giảng viên-->
+            <div class="infomation_teacher">
+                <div class="dong1">Thông tin giảng viên</div>
+                <hr>
+                <div class="cot1">
+                    <img src="https://st.quantrimang.com/photos/image/072015/22/avatar.jpg">
+                    <div class="cot1_1">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <p class="p1">10546</p>
+                        <p class="p2">học viên</p>
+                    </div>
+                    <div class="cot1_2">
+                        <i class="fa fa-play-circle" aria-hidden="true"></i>
+                        <p class="p1">6</p>
+                        <p class="p2">khóa học</p>
+                    </div>
+                </div>
+                <div class="cot2">
+                    <div class="p1">Vũ Ngọc Huy</div>
+                    <div class="p2">Expert Blockchain</div>
+                    <div class="p3">{{json.infomation_teacher}}</div>
+                     <button type="button" class="btn btn-info b1">Xem thêm</button>
+                </div>
+            </div>
+
+            <!--footer-->
+            <footer class="sticky-top">
+                <div class="container-fluid padding"style="background-color:#2F4F4F">
+                    <div class="row text-center">
+                    <div class="col-md-4">
+                        <div class="container-flud">
+                        <a style="font-family:'Macondo';color:rgba(32,90,167,0.9);font-size:25px"class="navbar-branch"height="50">@SMCS</a>
+                        </div>
+                        <p style="color:white">SDT: 0339170155</p>
+                        <p style="color:white">Mail: tuananhhust05@gmail.com</p>
+                        <p style="color:white">Address: Bách Khoa, Bạch Mai, Hà Nội</p>
+                        <h5 style="color:white">Services</h5>
+                        <p style="color:white">Outsourcing</p>
+                        <p style="color:white">Website Development</p>
+                        <p style="color:white">Mobile Application</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 style="color:white">Working hours</h5>
+                        <p style="color:white">Monday-Friday: 8am -5pm</p>
+                        <p style="color:white">Weekend: 8am-12am</p>
+                        <h5 style="color:white">Services</h5>
+                        <p style="color:white">Blearning</p>
+                        <p style="color:white">Blockchain systerm</p>
+                        <p style="color:white">Mobile</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 style="color:white">Download</h5>
+                        <img src="https://unica.vn/media/images_v2018/appstore.png">
+                        <p></p>
+                        <img src="https://unica.vn/media/images_v2018/playstore.png">
+                    </div>
+                    </div>
+                </div>
+            </footer>
+       
+    </body>
+</html>

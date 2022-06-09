@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+   
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--jquery quan trọng-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!--Icon--> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!--link script bootstrap 5 => Chuyển động slide-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!--header-->
+<nav class="navbar navbar-expand-lg navbar-primary bg-primary sticky-top">
+ <ul class="navbar-nav mr-auto"style="margin-left:65px">
+      <li class="nav-item active">
+         <a class="navbar-brand" href="/marketplacever1"style="font-size:30px;color:white">SMCS</a>
+      </li>
+     
+     
+      
+    </ul>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+
+     <form class="form-inline my-2 my-lg-0"style="margin-right:40px">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"style="color:white;border-color:#B0E0E6">Search</button>
+    </form>
+
+    
+  </div>
+</nav>
+
+<!---->
+<style>
+  .navbar li a:hover{
+    color:#87CEFA !important;
+  }
+</style>
+
+
+
+
+<!---->
+  
+  
+   <form class="form-inline my-2 my-lg-0"style="margin-left:83%;padding-top:0.5%"> 
+     <li class="nav-item dropdown" style="margin-left:35%">
+        <a class="btn btn-outline-success my-2 my-sm-0" class="nav-link dropdown-toggle"style="margin-top:2px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa-solid fa-file-invoice"></i>
+          Account 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
+          <a class="dropdown-item"id="account" >Business</a>
+        </div>
+      </li>
+    </form>
+    <h1 style="margin-left:40%;margin-top:5%">My Order</h1>
+    <div class="container">
+                <div id="product1" style="margin-top:3%;display:inline-block">
+                </div>
+                <hr/>
+          </div>     
+    </div>
+    <script src="web3.min.js"></script>  <!--link từ static file-->
+    <script>
+       
+
+// tạo element cho vòng for 
+const createElementFromString = (string) => {
+    const el = document.createElement('div'); // tạo ra thẻ div 
+    el.innerHTML = string;  // gán giá trị 
+    return el.firstChild;  // trả về con đầu tiên 
+};
+
+const CONTRACT_ADDRESS_manage_order="0xe5a36ed08494504CA3e27D6269fe82c096770E2F";
+const CONTRACT_ABI_manage_order=[
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "OrderList",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "addressuser",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "link_course",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "link_image",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "name_author",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "name_product",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "price",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "a",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "b",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "c",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "d",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "e",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "f",
+          "type": "string"
+        }
+      ],
+      "name": "Buy",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function",
+      "payable": true
+    }
+  ];
+ 
+  const web3= new Web3(
+    Web3.givenProvider|| 'HTTP://127.0.0.1:7545'
+);
+
+
+// các biến cần dùng 
+let account;
+const accountEl=document.getElementById('account');// account 
+// display marketplace 
+const product1=document.getElementById('product1');
+
+
+// contract 
+const contract_manage_order = new web3.eth.Contract(CONTRACT_ABI_manage_order,CONTRACT_ADDRESS_manage_order);
+
+const loadProvider=async() =>{
+    //await dùng gọi hàm detect
+    const provider= await detectEthereumProvider();
+    if(provider){  // nếu có người đăng nhập thì khởi động hàm điền thông tin 
+     provider.request({method:"eth_requestAccounts"})// website trả ra yêu cầu đăng nhập metamask
+     setWeb3Api({
+       web3: new Web3(provider), // tạo nên 1 đối tượng web 3 để đăng nhập 
+       provider
+     })
+    }
+    else{
+      console.error("please, install metamask")
+    }
+}
+
+
+
+
+
+
+const DisplayproductMarketplace = async ()=>{
+    
+    product1.innerText='';
+    var a=0;
+    var i=0;
+    while(a==0){  
+       const product = await contract_manage_order.methods.OrderList(i).call();
+       if(product==null){a=1};
+       if(a==0)
+        {
+          if(product.addressuser==account)
+              {    
+                const productEl = createElementFromString(  // tạo ra thẻ div bao ngoài dùng inner để tạo thẻ
+                  // dấu ` cẩn thận 
+                  // 1 e18 là đổi ra eth
+                  // tk 2 lỗi data do ad nhầm
+                    `<a href="/detail/${product.link_course}"style="text-decoration:none;color:black;display:inline-block;margin-left:10px">
+                        <div style="margin-top:1%">
+                            <div class="ticket card" style="width: 18rem;">
+                                <img src=${product.link_image} class="card-img-top" alt="...">
+                                <div class="card-body">
+                                <h5 class="card-title">${product.name_product}</h5>
+                                <h5 class="card-title">${product.name_author}</h5>
+                                <p class="card-text">Price: ${
+                                    product.price 
+                                } Eth</p>
+                               
+                                </div>
+                            </div>
+                          </div>
+                        </a>
+                      `
+                    );
+                product1.appendChild(productEl);
+              } 
+         }
+         i=i+1;
+    }
+}
+
+
+const main= async()=>{
+  console.log("test3");
+    loadProvider(); // có thằng này mới có những thằng sau 
+    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+        .catch((e) => {
+          console.error(e.message)
+          return
+        })// xuất thông tin để lấy account
+    account=accounts[0];  // account đã được khai báo từ trước để phục vụ cho buyticket; và nhiều hàm được gọi tới cũng dùng thằng này
+    accountEl.innerText=account;  // cài cho giá trị của thẳng html hiển thị account
+    await DisplayproductMarketplace(); // lấy account ở trên 
+}
+main();
+    </script>
+
+   
+</body>
+</html>

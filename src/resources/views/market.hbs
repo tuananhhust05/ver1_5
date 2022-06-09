@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="author" content="Kenneth Hu">
+    <title>Web3js</title>
+
+    <style>body {
+    background-color:#F0F0F0;
+    padding: 2em;
+    font-family: 'Raleway','Source Sans Pro', 'Arial';
+}
+.container {
+    width: 50%;
+    margin: 0 auto;
+}
+label {
+    display:block;
+    margin-bottom:10px;
+}
+input {
+    padding:10px;
+    width: 50%;
+    margin-bottom: 1em;
+}
+button {
+    margin: 2em 0;
+    padding: 1em 4em;
+    display:block;
+}
+
+#instructor {
+    padding:1em;
+    background-color:#fff;
+    margin: 1em 0;
+}</style>
+
+    <script src="web3.min.js"></script>  <!--link từ static file-->
+
+</head>
+<body>
+    <div class="container">
+
+        <h1>Web3.js</h1>
+
+        <label for="name" class="col-lg-2 control-label"><h3>NodeInfo</h3></label>
+        <input id="NodeInfo" type="text">
+		
+		<hr>
+
+        <label for="name" class="col-lg-2 control-label"><h3>Balance</h3></label>
+		<p>Account : <input id="Account" type="text"> </p>
+        <p>Balance : <input id="Balance" type="text"></p>
+		 
+
+		<hr>
+	
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <!--kết nối với smartcontract và lấy được các thông tin về tài khoản-->
+    <script>
+        // hiển thị thông tin tài khoản đầu tiên của hệ thông ganache default 
+		$( document ).ready(function() {
+			console.log( "ready!" );
+			
+			if (typeof web3 !== 'undefined') {
+				web3 = new Web3(web3.currentProvider);
+			} else {
+					// set the provider you want from Web3.providers
+				web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+			}
+			web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+			/* Get Node Info */
+			web3.eth.getNodeInfo(function(error, result){
+				if(error){
+					console.log( "error" ,error);
+				}
+				else{
+					console.log( "result",result );
+					$('#NodeInfo').val(result);
+				}
+			});
+			
+			/*Get Balance */
+			web3.eth.getAccounts(function(error, accounts) {
+				if(error) {
+					console.log(error);
+				}
+				$('#Account').val(accounts[0]);
+				web3.eth.getBalance(accounts[0]).then(function(result){
+					console.log( "Balance : " ,web3.utils.fromWei(result, 'ether'));
+					$('#Balance').val(web3.utils.fromWei(result, 'ether'));
+				});
+			});
+			
+			
+			
+        })
+</script>
