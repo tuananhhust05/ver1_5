@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+     <meta charset="UTF-8" />
+    
+        <!--meta responsiv-->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -15,6 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <!--link script bootstrap 5 => Chuyển động slide-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/market.css"/>
 </head>
 <body>
 
@@ -110,17 +115,7 @@
               <div id="monhoc"style="margin-top:10px">Tiếng Hàn </div>
               <div id="monhoc"style="margin-top:10px">Tiếng Pháp </div>
           </div>
-          <style>
-            #monhoc:hover{
-            background-color: #DCDCDC; cursor:pointer;
-            }
-            #listmonhoc{display:none;}
-            #openlistmonhoc:hover #listmonhoc{ 
-              display:block;
-              transition:all 3s ease;
-            }
-            
-          </style>
+          
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
           
@@ -144,13 +139,7 @@
               <div id="monhoc"style="margin-top:10px">Marketing managing</div>
               
           </div>
-          <style>
-            #monhoc:hover{
-            background-color: #DCDCDC; cursor:pointer;
-            }
-            #listmonhoc2{display:none;}
-            #openlistmonhoc2:hover #listmonhoc2{ display:block}
-          </style>
+          
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
           
@@ -267,13 +256,7 @@
           <a class="dropdown-item" href="#scrollspyHeading5">language</a>
       </li>
       <!--Hover-->
-    <style> 
-      #Loaisanpham:hover{ background-color: azure;cursor:pointer}
-      li { 
-      list-style-type: none; 
-      }
-      li:hover{background-color:#DCDCDC}
-    </style>
+    
     
   </div>  
   <div class="col-sm-12 col-lg-7" style="height:400px">
@@ -303,26 +286,15 @@
           <span class="visually-hidden">Next</span>
         </button>
     </div>
-   </div>
+  </div>
    <!--Đối tượng chèn lên slide-->
    <div id="decorateslide">
       <p style="text-align:center;color:white;font-size:35px">Change your way</p>
       <button type="button" class="btn btn-primary"style="margin-left:71px">Get Started</button>
    </div>
-   <style>
-     #decorateslide{
-       width:300px;
-       height:200px;
-       position:absolute;
-       top:47%;
-       left:50.75%;
-     }
-   </style>
  </div>
 
 <!--điều chỉnh kích thước css theo kích thước màn hình-->
-<!--Dùng J query-->
-<script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!--điều chỉnh hiển thị hay không hiển thị-->
 <script>
     $(document).ready(function(e){
@@ -758,160 +730,131 @@ const main= async()=>{
 main();
 </script>
 
-<!--Chinh phục mục tiêu của bạn-->
-<!--doạn sau chỉnh sửa phần chèn-->
-<!--hàng 1-->
-<h2 style="margin-left:6.5%;margin-top:5%;font-size:25px !important">CHINH PHỤC MỤC TIÊU CỦA BẠN</h2>
-<div class="row"style="margin-left:6.5%;margin-top:2%">
-  <div class="col-sm-12 col-lg-5"id="textimage">
-    <img id="textimage"style="height:300px;margin-left:-10px;border-radius:10px;box-shadow: 2px 2px 2px #999999;cursor:pointer"src="https://i.imgur.com/eQqdvkf.png"/>
-    <div style="margin-left:-10px;border-radius:10px;display:inline-block;margin-top:-50.1%;position:absolute;width:600px;height:300px;background-color:rgba(135, 138, 143, 0.597)">
-      <!--inline-block giúp cùng dòng-->
-      <div style="margin-top:40%;margin-left:1%">
-        <img src="https://unica.vn/media/images/icon-ct-1.png"style="background-color:#87CEFA;display:inline-block;border-radius:8px;padding:10px"/>
-        <h5  style="display:inline-block;color:white">Đầu tư chứng khoán chuyên nghiệp</h5>
+<!--gain_your_pupose-->
+    <h2 class="gain_your_pupose_title">CHINH PHỤC MỤC TIÊU CỦA BẠN</h2>
+    <div class="row gain_your_pupose_row">
+      <div class="col-sm-12 col-lg-5"id="textimage">
+        <img id="textimage" class="gain_your_pupose_title_img1"src="https://i.imgur.com/eQqdvkf.png"/>
+        <div class="gain_your_pupose_content1">
+          <!--inline-block giúp cùng dòng-->
+          <div class="gain_your_pupose_content1_1">
+            <img src="https://unica.vn/media/images/icon-ct-1.png"/>
+            <h5  >Đầu tư chứng khoán chuyên nghiệp</h5>
+          </div>
+        </div>
       </div>
+     
+
+
+      <div class="col-sm-12 col-lg-5"id="textimage"style="margin-left:5%">
+        <img id="textimage"class="gain_your_pupose_title_img1"src="https://cms.unica.vn/upload/images/062122_combo-digital-marketing_thumb.jpg"/>
+        <div class="gain_your_pupose_content1">
+          <!--inline-block giúp cùng dòng-->
+          <div class="gain_your_pupose_content1_1">
+            <img src="https://unica.vn/media/images/icon-ct-2.png"/>
+            <h5>Combo Marketing Online</h5>
+          </div>
+        </div>
+      </div>
+      <!--css thẻ div-->
+      <style>
+            #textimage:hover{
+              box-shadow: 15px 15px 15px #87CEFA;
+              border-radius:10px;
+              color:red;
+            }
+      </style>
     </div>
-  </div>
-  <!--css thẻ div-->
-  <style>
-        #textimage:hover{
-          box-shadow: 15px 10px 10px #87CEFA;
-          border-radius:10px;
-          color:red;
-        }
-  </style>
-
-
-  <div class="col-sm-12 col-lg-5"id="textimage"style="margin-left:5%">
-    <img id="textimage"style="height:300px;margin-left:-10px;border-radius:10px;box-shadow: 2px 2px 2px #999999;cursor:pointer"src="https://cms.unica.vn/upload/images/062122_combo-digital-marketing_thumb.jpg"/>
-    <div style="margin-left:-10px;border-radius:10px;display:inline-block;margin-top:-50.1%;position:absolute;width:600px;height:300px;background-color:rgba(135, 138, 143, 0.597)">
-      <!--inline-block giúp cùng dòng-->
-      <div style="margin-top:40% ;margin-left:1%">
-        <img src="https://unica.vn/media/images/icon-ct-2.png"style="background-color:#00FA9A;display:inline-block;border-radius:8px;padding:10px"/>
-        <h5  style="display:inline-block;color:white">Combo Marketing Online</h5>
+    <button class="btn btn-primary next_content">XEM TIẾP</button>
+<!--list_service-->
+    <div class="row list_service_row">
+ 
+      <div class="col-sm-4 col-lg-2 list_service_content_1"id="textimage2">
+        <i class="fa fa-language"></i>
+        <p >Ngoại Ngữ</p>
       </div>
+      <div class="col-sm-4 col-lg-2 list_service_content_1_2"id="textimage2">
+        <i class="fa fa-line-chart"></i>
+        <p >Marketing</p>
+      </div>
+      <div class="col-sm-4 col-lg-2 list_service_content_1_2"id="textimage2">
+        <i class="fa fa-desktop"></i>
+        <p >Tin học văn phòng</p>
+      </div>
+      <div class="col-sm-4 col-lg-2 list_service_content_1_2"id="textimage2">
+        <i class="fa fa-camera"></i>
+        <p >Nhiếp ảnh</p>
+      </div>
+      <div class="col-sm-4 col-lg-2 list_service_content_1_2"id="textimage2">
+        <i class="fa fa-rocket"></i>
+        <p >Khởi nghiệp</p>
+      </div>
+   
     </div>
-  </div>
-  <!--css thẻ div-->
-  <style>
-        #textimage:hover{
-          box-shadow: 15px 15px 15px #87CEFA;
-          border-radius:10px;
-          color:red;
-        }
-  </style>
-</div>
-
-<!--hàng 2-->
-<div class="row"style="margin-left:11%;margin-top:2.5%">
-  <div class="col-3"style="margin-left:-5%">
-    <img id="textimage"src="https://cms.unica.vn/upload/images/015121_combo-ke-toan-misa-excel_thumb.jpg"style="border-radius:10px;width:100%">
-      <div style="margin-top:-20% ;margin-left:1%">
-        <img src="https://unica.vn/media/images/icon-ct-3.png"style="background-color:#FFA500;display:inline-block;border-radius:8px;padding:10px"/>
-        <h5  style="display:inline-block;color:white">Combo Marketing Online</h5>
-      </div>
-  </div>
-  <div class="col-3"style="margin-left:10%">
-    <img id="textimage"src="https://cms.unica.vn/upload/images/070342_yoga-cb-giam-eo-giu-dang_thumb.jpg"style="border-radius:10px;width:100%">
-     <div style="margin-top:-20% ;margin-left:1%">
-        <img src="https://unica.vn/media/images/icon-ct-4.png"style="background-color:#FF0000;display:inline-block;border-radius:8px;padding:10px"/>
-        <h5  style="display:inline-block;color:white">Giảm eo giữ dáng với Yoga</h5>
-      </div>
-  </div>
-  <div class="col-3"style="margin-left:10%;">
-    <img id="textimage"src="https://cms.unica.vn/upload/images/063856_combotienganhgiaotiep_thumb.jpg"style="border-radius:10px">
-     <div style="margin-top:-20% ;margin-left:1%">
-        <img src="https://unica.vn/media/images/icon-ct-5.png"style="background-color:#4682B4;display:inline-block;border-radius:8px;padding:10px"/>
-        <h5  style="display:inline-block;color:white">Tự tin giao tiếp tiếng Anh</h5>
-      </div>
-  </div>
-</div>
-<button class="btn btn-primary"style="margin-left:45%;margin-top:1%">XEM TIẾP</button>
-
-
-<!--Danh sách dịch vụ-->
-<!--thuộc tính hover textimage dùng cho tất cả-->
-<div class="row"style="width:90%;margin-left:11.5%;margin-top:5%">
- 
-  <div class="col-sm-4 col-lg-2"id="textimage2"style="display:block;cursor:pointer;border-radius:10px;border: 1px solid #DCDCDC;box-shadow: 2px 2px 2px #999999;background-color:white;height:80px;width:13%">
-     <i class="fa fa-language"style="font-size:40px;margin-left:35%;margin-top:10%"></i>
-     <p style="text-align:center">Ngoại Ngữ</p>
-  </div>
-  <div class="col-sm-4 col-lg-2"id="textimage2"style="display:block;cursor:pointer;border-radius:10px;border: 1px solid #DCDCDC;box-shadow: 2px 2px 2px #999999;background-color:white;height:80px;width:13%;margin-left:5%">
-     <i class="fa fa-line-chart"style="font-size:40px;margin-left:35%;margin-top:10%"></i>
-     <p style="text-align:center">Marketing</p>
-  </div>
-  <div class="col-sm-4 col-lg-2"id="textimage2"style="display:block;cursor:pointer;border-radius:10px;border: 1px solid #DCDCDC;box-shadow: 2px 2px 2px #999999;background-color:white;height:80px;width:13%;margin-left:5%">
-     <i class="fa fa-desktop"style="font-size:40px;margin-left:35%;margin-top:10%"></i>
-     <p style="text-align:center">Tin học văn phòng</p>
-  </div>
-  <div class="col-sm-4 col-lg-2"id="textimage2"style="display:block;cursor:pointer;border-radius:10px;border: 1px solid #DCDCDC;box-shadow: 2px 2px 2px #999999;background-color:white;height:80px;width:13%;margin-left:5%">
-     <i class="fa fa-camera"style="font-size:40px;margin-left:35%;margin-top:10%"></i>
-     <p style="text-align:center">Nhiếp ảnh</p>
-  </div>
-  <div class="col-sm-4 col-lg-2"id="textimage2"style="display:block;cursor:pointer;border-radius:10px;border: 1px solid #DCDCDC;box-shadow: 2px 2px 2px #999999;background-color:white;height:80px;width:13%;margin-left:5%">
-     <i class="fa fa-rocket"style="font-size:40px;margin-left:35%;margin-top:10%"></i>
-     <p style="text-align:center">Khởi nghiệp</p>
-  </div>
-   <style>
-        #textimage2:hover{
-          box-shadow: 5px 5px 5px #87CEFA!important;
-          border-radius:10px;
-          color:red;
-        }
-  </style>
-</div>
-<div class="row"style="width:90%;margin-left:11.5%;margin-top:2.5%">
- 
-  <div class="col-sm-4 col-lg-2"id="textimage2"style="cursor:pointer;border-radius:10px;border: 1px solid #DCDCDC;box-shadow: 2px 2px 2px #999999;background-color:white;height:80px;width:13%">
-     <i class="fa fa-shopping-cart"style="font-size:40px;margin-left:35%;margin-top:10%"></i>
-     <p style="text-align:center">Bán hàng</p>
-  </div>
-  <div class="col-sm-4 col-lg-2"id="textimage2"style="cursor:pointer;border-radius:10px;border: 1px solid #DCDCDC;box-shadow: 2px 2px 2px #999999;background-color:white;height:80px;width:13%;margin-left:5%">
-     <i class="fa fa-code"style="font-size:40px;margin-left:35%;margin-top:10%"></i>
-     <p style="text-align:center">CNTT</p>
+    <div class="row list_service_row">
     
-  </div>
-  <div class="col-sm-4 col-lg-2"id="textimage2"style="cursor:pointer;border-radius:10px;border: 1px solid #DCDCDC;box-shadow: 2px 2px 2px #999999;background-color:white;height:80px;width:13%;margin-left:5%">
-     <i class="fa fa-heartbeat"style="font-size:40px;margin-left:35%;margin-top:10%"></i>
-     <p style="text-align:center">Y tế</p>
-  </div>
-  <div class="col-sm-4 col-lg-2"id="textimage2"style="cursor:pointer;border-radius:10px;border: 1px solid #DCDCDC;box-shadow: 2px 2px 2px #999999;background-color:white;height:80px;width:13%;margin-left:5%">
-     <i class="fa fa-cutlery"style="font-size:40px;margin-left:35%;margin-top:10%"></i>
-     <p style="text-align:center">Nấu ăn</p>
-  </div>
-  <div class="col-sm-4 col-lg-2"id="textimage2"style="cursor:pointer;border-radius:10px;border: 1px solid #DCDCDC;box-shadow: 2px 2px 2px #999999;background-color:white;height:80px;width:13%;margin-left:5%">
-     <i class="fa-solid fa-computer"style="font-size:40px;margin-left:35%;margin-top:10%"></i>
-     <p style="text-align:center">AI</p>
-  </div>
+      <div class="col-sm-4 col-lg-2 list_service_content_1"id="textimage2">
+        <i class="fa fa-shopping-cart"></i>
+        <p >Bán hàng</p>
+      </div>
+      <div class="col-sm-4 col-lg-2 list_service_content_1_2"id="textimage2">
+        <i class="fa fa-code"></i>
+        <p >CNTT</p>
+        
+      </div>
+      <div class="col-sm-4 col-lg-2 list_service_content_1_2"id="textimage2">
+        <i class="fa fa-heartbeat"></i>
+        <p >Y tế</p>
+      </div>
+      <div class="col-sm-4 col-lg-2 list_service_content_1_2"id="textimage2">
+        <i class="fa fa-cutlery"></i>
+        <p >Nấu ăn</p>
+      </div>
+      <div class="col-sm-4 col-lg-2 list_service_content_1_2"id="textimage2">
+        <i class="fa-solid fa-computer"></i>
+        <p >AI</p>
+      </div>
 
-</div>
+    </div>
+<!--solution-->
+    <h3 style="font-weight:700;text-align:center;margin-top:3%">CÁC GIẢI PHÁP TỪ SMCS</h3>
+    <div class="row"style="margin-top:3%;margin-left:10%">
+          <div style="margin-top:20px;margin-bottom:10px"class="col-sm-12 col-lg-6">
+              <a href=""style="color:black;text-decoration:none">
+              <div class="card" style="width: 30rem;">
+                    <div style="box-shadow: 2px 2px 2px #999999;border-radius: 10px;">
+                      <img style="width:30rem"class="card-img-top" src="https://unica.vn/media/images_v2018/hb-edu.jpg" alt="Card image cap">
+                      <div class="card-body">
+                         <hr style="color:black;text-align: center;"  width="100%" />
+                         <p class="card-text"style="text-align:center;text-shadow: 1px 1px 1px #000;">Lưu trữ phân tán</p>  
+                         <p class="card-text"style="text-align:center;text-shadow: 1px 1px 1px #C0C0C0;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                         
+                       </div>
+                    </div>
+               </div>
+               </a>
+          </div>
+           <div style="margin-top:20px;margin-bottom:10px"class="col-sm-10 col-lg-6">
+              <a href=""style="color:black;text-decoration:none">
+              <div class="card" style="width: 30rem;">
+                <div style="box-shadow: 2px 2px 2px #999999;border-radius: 10px;">
+                  <img style="width:30rem"class="card-img-top" src="https://unica.vn/media/images_v2018/hb-edu.jpg" alt="Card image cap">
+  
+                  <div class="card-body">
+                       <hr style="color:black;text-align: center;"  width="100%"  />
+                       <p class="card-text"style="text-align:center;text-shadow: 1px 1px 1px #000;">Blockchain</p>  
+                       <p class="card-text"style="text-align:center;text-shadow: 1px 1px 1px #C0C0C0;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>  
+                  </div>
+                </div>
+               </div>
+               </a>
+          </div>
+     </div>
 
-<!--Lý do chọn-->
-<h3 style="text-align:center;margin-top:5%">LÝ DO BẠN CHỌN SMCS</h3>
-<div class="row" style="width:70%;margin-left:20%">
-  <div class="col"style="display:block">
-    <img src="https://unica.vn/media/images/icon-ts-1.png">
-    <p style="font-size:20px;font-weight:500;text-align:left">Giảng viên uy tín</p>
-    <p style="font-size:14px;font-weight:200;text-align:left;margin-top:-5%;margin-left:5px">Bài giảng chất lượng</p>
-  </div>
-  <div class="col"style="display:block">
-    <img src="https://unica.vn/media/images/icon-ts-2.png">
-    <p style="font-size:20px;font-weight:500;text-align:left">Thanh toán 1 lần</p>
-    <p style="font-size:14px;font-weight:200;text-align:left;margin-top:-5%;margin-left:25px">Học mãi mãi</p>
-  </div>
-  <div class="col"style="display:block">
-    <img src="https://unica.vn/media/images/icon-ts-3.png">
-    <p style="font-size:20px;font-weight:500;text-align:left">Học trực tuyến</p>
-    <p style="font-size:14px;font-weight:200;text-align:left;margin-top:-5%;margin-left:25px">Hỗ trợ trực tiếp</p>
-  </div>
-</div>
 
-
-<!--Đội ngũ chuyên gia-->
-<h3 style="text-align:center;margin-top:5%">ĐỘI NGŨ CHUYÊN GIA</h3>
- <div class="row"style="margin-top:3%;margin-left:10%">
+<!-- expert-->
+    <h3 style="text-align:center;margin-top:5%">ĐỘI NGŨ CHUYÊN GIA</h3>
+    <div class="row"style="margin-top:3%;margin-left:10%">
           <div style="margin-top:20px;margin-bottom:10px"class="col-sm-12 col-lg-4">
               <a href=""style="color:black;text-decoration:none">
               <div class="card" style="width: 18rem;">
@@ -964,43 +907,20 @@ main();
                </div>
              </a>
           </div>
- </div>
+    </div>
 
-
- <!--Giải pháp-->
- <h3 style="font-weight:700;text-align:center;margin-top:3%">CÁC GIẢI PHÁP TỪ SMCS</h3>
- <div class="row"style="width:82%;margin-left:10%;padding-right:2px">
-   <div class="col">
-      <div class="card" style="width: 36rem;">
-          <img src="https://unica.vn/media/images_v2018/hb-edu.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p style="color:#ADD8E6;font-weight:600;font-size:25px">Lưu trữ phân tán</p>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-      </div>
-   </div>
-   <div class="col"style="margin-left:1%;">
-      <div class="card" style="width: 36rem;">
-          <img src="https://unica.vn/media/images_v2018/hb-edu.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p style="color:#ADD8E6;font-weight:600;font-size:25px">Blockchain</p>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-      </div>
-   </div>
- </div>
-
- <!--Trở thành giảng viên -->
- <img style="width:100%;height:300px;margin-top:5%;"src="https://cdn.pixabay.com/photo/2017/01/10/01/32/study-1968077__340.jpg">
- <div style="background-color:rgba(13, 100, 213, 0.682);height:300px;margin-top:-300px">
-   <p style="font-weight:500;text-align:center;font-size:35px;color:white">Trở thành giảng viên SMCS</p>
-   <p style="font-weight:200;text-align:center;margin-top:1.5%;font-size:15px;color:white">Hơn 10000 giảng viên đã có khóa học trên SMCS</p>
-   <button class="btn btn-outline-success my-2 my-sm-0" type="submit"style="color:white;border-color:#B0E0E6;margin-left:45%">Đăng ký ngay</button>
- </div>
+<!--footer-->
+<!--Trở thành giảng viên -->
+  <img class="footer_first"style="height:300px;margin-top:5%;"src="https://cdn.pixabay.com/photo/2017/01/10/01/32/study-1968077__340.jpg">
+  <div class="footer_first"style="background-color:rgba(13, 100, 213, 0.682);height:300px;margin-top:-300px">
+    <p style="font-weight:500;text-align:center;font-size:35px;color:white">Trở thành giảng viên SMCS</p>
+    <p style="font-weight:200;text-align:center;margin-top:1.5%;font-size:15px;color:white">Hơn 10000 giảng viên đã có khóa học trên SMCS</p>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"style="color:white;border-color:#B0E0E6;margin-left:45%">Đăng ký ngay</button>
+  </div>
 
 
  <!--footer-->
- <footer>
+     <footer>
           <div class="container-fluid padding"style="background-color:#2F4F4F">
             <div class="row text-center">
               <div class="col-md-4">
@@ -1032,20 +952,11 @@ main();
               </div>
             </div>
           </div>
- </footer>
+    </footer>
 
-<!--thành phần cố đinh-->
-<img id="textimage3" class="sticky-top"style="position:fixed;left:3%;top:85%;width:50px;height:50px;color:rgba(32,90,167,0.9)"src="https://webpush.vn/assets/images/favicon.png">
-   <style>
-        #textimage3:hover{
-          box-shadow: 5px 5px 5px #87CEFA!important;
-          border-radius:100%;
-          color:red;
-          cursor:pointer;
-        }
-  </style>
+<!--thành phần cố đinh chuông, tin nhắn-->
+      <img id="textimage3" class="sticky-top"style="position:fixed;left:3%;top:85%;width:50px;height:50px;color:rgba(32,90,167,0.9)"src="https://webpush.vn/assets/images/favicon.png">
+      <img id="textimage3" class="sticky-top"style="border-radius:100%;background-color:rgba(32,90,167,0.9);position:fixed;left:95%;top:85%;width:50px;height:50px;color:rgba(32,90,167,0.9)"src=" https://fchat.vn/assets/images/fchat-icon.png">
 
-<img id="textimage3" class="sticky-top"style="border-radius:100%;background-color:rgba(32,90,167,0.9);position:fixed;left:95%;top:85%;width:50px;height:50px;color:rgba(32,90,167,0.9)"src=" https://fchat.vn/assets/images/fchat-icon.png">
-   
 </body>
 </html>
