@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
+       <meta charset="UTF-8" />
     
+        <!--meta responsiv-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
     
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -14,11 +18,13 @@
         <!--Icon--> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" type="text/css" href="css/detail.css"/>
+        <!--thư viện web3 cdn-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js" integrity="sha512-dUtqwyU7CGy2STT3zZIZBIM32aHjuF5HGqT6v/GvpFWeBHmsoTe0ixeVt6vPi9NIittZDJjrz9arjBPeoRSnBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
     <body>   
             <!--Những thằng dùng link truyền thông tin thường không xác định; không dẫn đc link static-->
             <style>
-                @import url(https://fonts.google.com/specimen/Macondo);
+@import url(https://fonts.google.com/specimen/Macondo);
 /*CSS header*/
 .formal_infomation_course{
     background-color: #06345C;
@@ -555,6 +561,18 @@
 footer{
     margin-top:5%;
 }
+            
+/*responsive*/
+/*responsive đặt mốc kế thừa các giá trị của phiên trước*/
+@media (max-width: 1280px) {
+   .introductionvideo .dong1 .dong1_1{
+      position:absolute;
+      margin-top:-70px;
+   }
+   .introductionvideo .dong1 .dong1_2{
+       display:none;
+   }
+}
 @media (max-width: 1025px){
     .introductionvideo{
         margin-top:-600px;
@@ -765,6 +783,7 @@ footer{
        display:none;
    }
 }
+
             </style>
             
             <!--header-->
@@ -862,7 +881,7 @@ footer{
             </div>
 
             <!--Phần đăng ký thanh toán-->
-            <div class="register_learn sticky-top  "style="height:3000px">
+            <div class="sticky-top register_learn  "style="height:3000px">
                 <div class="dong1">
                     
                     <div class="p1">
@@ -884,7 +903,7 @@ footer{
                     <p>Thời gian ưu đãi chỉ còn 1 ngày</p>
                 </div>
                 <div class="dong3">
-                    <button type="button" class="btn btn-danger dong33">Đăng ký học</button>
+                    <button id="register_learn_buy" type="button" class="btn btn-danger dong33">Đăng ký học</button>
                 </div>
                 <div class="dong4">
                     <button type="button" class="btn btn-success dong41">
@@ -1101,7 +1120,283 @@ footer{
                      <button type="button" class="btn btn-info b1">Xem thêm</button>
                 </div>
             </div>
+            
+            
+        
+        <!--truyền dữ liệu từ controller sang web3js--> 
+        <p id="data_transform"style="display:none">{{json_string}}</p>
+        <!--code web3-->
+        <!--abi cả address lấy từ cloud-->
+        <script>
+    // truyền thông tin từ controller đến đoạn script => controller lấy data trên cloud sau đó đổ về đoạn script 
+const data =document.getElementById('data_transform');
+const obj = JSON.parse(data.innerText); // chuyển từ string sang object 
+console.log(obj);
 
+
+const CONTRACT_ADDRESS_Blockchain_Course="0xE5fD8917320d73d43E9cD9BA3B03A84F8C0cb530";// network kia search trong json 
+const CONTRACT_ABI_Blockchain_Course=[
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "a",
+				"type": "string"
+			}
+		],
+		"name": "Buy",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "AccountList",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "description",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "link_course",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "link_image",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name_author",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name_product",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "price",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+
+const CONTRACT_ADDRESS_manage_order="0x83923F4Be443fc37595716013B798D40cD7e154C";
+const CONTRACT_ABI_manage_order=[
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "a",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "b",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "c",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "d",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "e",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "f",
+				"type": "string"
+			}
+		],
+		"name": "Buy",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "OrderList",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "addressuser",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "link_course",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "link_image",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "name_author",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "name_product",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "price",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+ 
+ const web3= new Web3(
+    Web3.givenProvider|| 'HTTP://127.0.0.1:7545'
+);
+
+
+// các biến cần dùng 
+let account;
+const accountEl=document.getElementById('account');// account 
+
+// contract 
+const contract_blockchain_course = new web3.eth.Contract(CONTRACT_ABI_Blockchain_Course,CONTRACT_ADDRESS_Blockchain_Course);
+const contract_manage_order = new web3.eth.Contract(CONTRACT_ABI_manage_order,CONTRACT_ADDRESS_manage_order);
+
+
+const loadProvider=async() =>{
+    //await dùng gọi hàm detect
+    const provider= await detectEthereumProvider();
+    if(provider){  // nếu có người đăng nhập thì khởi động hàm điền thông tin 
+     provider.request({method:"eth_requestAccounts"})// website trả ra yêu cầu đăng nhập metamask
+     setWeb3Api({
+       web3: new Web3(provider), // tạo nên 1 đối tượng web 3 để đăng nhập 
+       provider
+     })
+    }
+    else{
+      console.error("please, install metamask")
+    }
+}
+
+const buyProduct = async (product_price,product_name_author,product_name_product,product_link_image,product_link_course) => { 
+   contract_manage_order.methods.Buy(String(account),product_link_course,product_link_image,product_name_author,product_name_product,product_price).send({from: account, value: '1000000',gas: '1000000' }); 
+   var x= Number(product_price)*1e18;
+   // đang bị lỗi phí gas khắc phục bằng cách thêm phí 
+   // giao dịch của thằng này luôn external payable
+   await contract_blockchain_course.methods.Buy(String(account)).send({from: account, value: String(x),gas: '1000000' });  // không chung 2 thằng await đc 
+    }; 
+
+const set_event=async() =>{
+     const product_link_course = await contract_blockchain_course.methods.link_course().call();
+     const product_link_image = await contract_blockchain_course.methods.link_image().call();
+     const product_name_product = await contract_blockchain_course.methods.name_product().call();
+     const product_description = await contract_blockchain_course.methods.description().call();
+     const product_name_author = await contract_blockchain_course.methods.name_author().call();
+     const product_price = await contract_blockchain_course.methods.price().call();
+     // set phím bấm buy
+     const productEl=document.getElementById('register_learn_buy');
+     productEl.onclick = buyProduct.bind(null,product_price,product_name_author,product_name_product,product_link_image,product_link_course);  // ghi nhận hiện tượng click và báo lệnh 
+ 
+}
+const main= async()=>{
+  console.log("test3");
+    loadProvider(); // có thằng này mới có những thằng sau 
+    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+        .catch((e) => {
+          console.error(e.message)
+          return
+        })// xuất thông tin để lấy account
+    account=accounts[0];  // account đã được khai báo từ trước để phục vụ cho buyticket; và nhiều hàm được gọi tới cũng dùng thằng này
+    accountEl.innerText=account;  // cài cho giá trị của thẳng html hiển thị account
+    await set_event(); 
+}
+main();
+</script>
             <!--footer-->
             <footer class="sticky-top">
                 <div class="container-fluid padding"style="background-color:#2F4F4F">
@@ -1139,3 +1434,4 @@ footer{
        
     </body>
 </html>
+

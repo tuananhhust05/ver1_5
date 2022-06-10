@@ -558,7 +558,8 @@ const CONTRACT_ABI_manage_order=[
 		"type": "function"
 	}
 ];
-  const web3= new Web3(
+ 
+ const web3= new Web3(
     Web3.givenProvider|| 'HTTP://127.0.0.1:7545'
 );
 
@@ -623,12 +624,14 @@ const DisplayproductMarketplace = async ()=>{
              <div class="thongtin sticky-top" id="thongtinhanghoa"> <!--sticky-top ghi đè-->
               <p style="background-color:#90EE90;text-align:center;border-radius:5px">Imformation</p>
               <p style="display:inline-block"><p style="font-weight: 700 !important;display:inline-block">Description:</p> ${product_description}</p>
-              <button type="button" class="btn btn-primary"style="width:100%;margin-top:1%">
+              
                  <a href="/detail/${product_link_course}" style="text-decoration:none;color:white">
+                 <button type="button" class="btn btn-primary"style="width:100%;margin-top:1%">
                   <i class="fa-solid fa-eye"></i>
                   View
+                  </button>
                  </a>
-              </button>
+              
             </div>
             <div class="card-body">
                <h5 class="card-title">${product_name_product}</h5>
