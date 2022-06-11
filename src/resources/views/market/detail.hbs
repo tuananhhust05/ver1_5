@@ -874,9 +874,9 @@ footer{
                     <i class="fa fa-star co-or" style="display:inline-block"></i>
                     <i class="fa fa-star co-or" style="display:inline-block"></i>
                     <i class="fa fa-star co-or" style="display:inline-block"></i>
-                    <p>3000 đánh giá</p>
+                    <p>{{json_manage.count_review}} đánh giá</p>
                     <i class="fa fa-users" style="display:inline-block;color:white;margin-left:-35%"></i>
-                    <p>4438 học viên</p>
+                    <p>{{json_manage.student_cource}} học viên</p>
                 </div>
             </div>
 
@@ -885,17 +885,17 @@ footer{
                 <div class="dong1">
                     
                     <div class="p1">
-                        <p>{{json.new_price}}</p>
+                        <p>{{json_manage.new_price}}</p>
                         <!--position:absolute rất quan trọng-->
                         <p class="p11">đ</p>
                     </div>
                     <div class="p2">
-                        <p class="p21">{{json.old_price}}</p>
+                        <p class="p21">{{json_manage.old_price}}</p>
                         <p class="p22">đ</p>
                         <hr class="p23">
                     </div>
                      <div class="p3">
-                        <p>({{json.sale_off}}%)</p>
+                        <p>({{json_manage.sale_off}}%)</p>
                     </div>
                 </div>
                 <div class="dong2">
@@ -924,11 +924,11 @@ footer{
                 </div>
                 <div class="dong8">
                     <i class="fa fa-history" aria-hidden="true"></i>
-                    <p> Sở hữu khóa học trọn đời</p>
+                    <p>{{json_manage.own_cource}}</p>
                 </div>
                 <div class="dong8">
                     <i class="fa fa-certificate" aria-hidden="true"></i>
-                    <p>Cấp chứng nhận hoàn thành</p>
+                    <p>{{json_manage.certificate}}</p>
                 </div>
                 <div class="dong8">
                     <i class="fa fa-percent" aria-hidden="true"></i>
@@ -948,7 +948,7 @@ footer{
             <!--Phần video-->
             <div class="introductionvideo">
                 <div class="video">
-                  <img src="https://baoquocte.vn/stores/news_dataimages/dangtuan/012020/09/15/tien-si-tre-vu-ngoc-huy-voi-y-tuong-ung-dung-blockchain.jpg">
+                  <img src={{json.img_course}}>
                 </div>
                 <div class="dong1">
                     <div class="dong1_1">
@@ -1104,12 +1104,12 @@ footer{
                     <img src="https://st.quantrimang.com/photos/image/072015/22/avatar.jpg">
                     <div class="cot1_1">
                         <i class="fa fa-users" aria-hidden="true"></i>
-                        <p class="p1">10546</p>
+                        <p class="p1">{{json_manage.count_student_teacher}}</p>
                         <p class="p2">học viên</p>
                     </div>
                     <div class="cot1_2">
                         <i class="fa fa-play-circle" aria-hidden="true"></i>
-                        <p class="p1">6</p>
+                        <p class="p1">{{json_manage.cout_cource}}</p>
                         <p class="p2">khóa học</p>
                     </div>
                 </div>
@@ -1124,14 +1124,17 @@ footer{
             
         
         <!--truyền dữ liệu từ controller sang web3js--> 
-        <p id="data_transform"style="display:none">{{json_string}}</p>
+       
+        <p id="data_db"style="display:none">{{data_postgre_string}}</p>
+        
         <!--code web3-->
         <!--abi cả address lấy từ cloud-->
         <script>
-    // truyền thông tin từ controller đến đoạn script => controller lấy data trên cloud sau đó đổ về đoạn script 
-const data =document.getElementById('data_transform');
-const obj = JSON.parse(data.innerText); // chuyển từ string sang object 
-console.log(obj);
+            // lấy abi và address dựa trên link_access
+const data_postgre =JSON.parse(document.getElementById('data_db').innerText); // chuyển gói dữ liệu từ table thành object 
+const data_postgre_address=data_postgre.address;
+const data_postgre_abi =data_postgre.abi.abi;
+console.log(data_postgre_abi) //mảng 
 
 
 const CONTRACT_ADDRESS_Blockchain_Course="0xE5fD8917320d73d43E9cD9BA3B03A84F8C0cb530";// network kia search trong json 
@@ -1344,7 +1347,7 @@ let account;
 const accountEl=document.getElementById('account');// account 
 
 // contract 
-const contract_blockchain_course = new web3.eth.Contract(CONTRACT_ABI_Blockchain_Course,CONTRACT_ADDRESS_Blockchain_Course);
+const contract_blockchain_course = new web3.eth.Contract(data_postgre_abi,data_postgre_address);
 const contract_manage_order = new web3.eth.Contract(CONTRACT_ABI_manage_order,CONTRACT_ADDRESS_manage_order);
 
 
@@ -1434,4 +1437,5 @@ main();
        
     </body>
 </html>
+
 
