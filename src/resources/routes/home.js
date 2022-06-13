@@ -7,12 +7,15 @@ const HomeController = require('../app/controllers/HomeController');// import th
 // quản lý truy cập 
 
 
+// Chức năng giỏ hàng 
+router.post('/register_product',HomeController.register_product);
+router.get('/delete_order/:slug/:account',HomeController.delete_order); // delete order
+
+// chuyển account vào controller 
+router.post('/take_account',HomeController.take_account)
 router.get('/detail/:slug',HomeController.detail)
 
 router.get('/myorder',HomeController.myorder); // test nhúng code web3 vào html 
-
-// thằng này cần export
-
 
 
 router.get('/marketplacever1',HomeController.marketplacever1);

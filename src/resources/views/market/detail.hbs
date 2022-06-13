@@ -13,8 +13,8 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <!--jquery quan trọng-->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <!--jquery quan trọng, viết ajax-->
+         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
         <!--Icon--> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" type="text/css" href="css/detail.css"/>
@@ -22,6 +22,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js" integrity="sha512-dUtqwyU7CGy2STT3zZIZBIM32aHjuF5HGqT6v/GvpFWeBHmsoTe0ixeVt6vPi9NIittZDJjrz9arjBPeoRSnBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
     <body>   
+
+        <!--Thẻ hiển thị kích thước màn hình-->
+       
             <!--Những thằng dùng link truyền thông tin thường không xác định; không dẫn đc link static-->
             <style>
 @import url(https://fonts.google.com/specimen/Macondo);
@@ -564,6 +567,16 @@ footer{
             
 /*responsive*/
 /*responsive đặt mốc kế thừa các giá trị của phiên trước*/
+/* responsive dùng px, loại bỏ những chi tiết không cần thiết*/
+@media(max-width:1490px){
+    .introductionvideo .dong1 .dong1_2{
+       display:none;
+   }
+   .introductionvideo .dong1 .dong1_1{
+      position:absolute;
+      margin-top:-40px;
+    }
+}
 @media (max-width: 1280px) {
    .introductionvideo .dong1 .dong1_1{
       position:absolute;
@@ -571,6 +584,14 @@ footer{
    }
    .introductionvideo .dong1 .dong1_2{
        display:none;
+   }
+   .introductionvideo .dong1 .dong1_1{
+      display:none;}
+     .title_course{
+    box-shadow:none;
+   }
+    .detail_content_course{
+       margin-top:650px;
    }
 }
 @media (max-width: 1025px){
@@ -580,16 +601,16 @@ footer{
     .introductionvideo .dong1 .dong1_1{
       position:absolute;
       margin-top:-150px;
+      display:none;
    }
+  
    .title_course .p1{
        width:90px;
        font-size:15px;
        margin: 0px -8px;
    }
    .title_course .p3{
-       width:170px;
-       font-size:15px;
-       margin: 0px -8px;
+       display:none;
    }
    .title_course .p2{
        width:160px;
@@ -597,7 +618,7 @@ footer{
        margin: 0px -8px;
    }
    .detail_content_course{
-       margin-top:60%;
+       margin-top:700px;
    }
    .detail_content_course .dong3 .dong3_3{
        display:none;
@@ -654,7 +675,7 @@ footer{
        margin: 0px -8px;
    }
    .detail_content_course{
-       margin-top:90%;
+       margin-top:900px;
    }
    .detail_content_course .dong3 .dong3_3{
        display:none;
@@ -693,7 +714,7 @@ footer{
    }
    
    .detail_content_course{
-       margin-top:110%;
+       margin-top:850px;
    }
    
 }
@@ -709,14 +730,20 @@ footer{
       position:absolute;
       margin-top:-75px;
    }
+   #register_learn_buy{
+    font-size: 15px;
+   }
    .title_course{
        height:100px;
    }
    .detail_content_course{
-       margin-top:140%;
+       margin-top:1000px;
    }
    .infomation_teacher .cot1{
        margin-left:9%;
+   }
+    .infomation_teacher .cot2{
+       width:150px;
    }
 }
 @media (max-width: 481px){
@@ -868,7 +895,7 @@ footer{
                  <p>{{json.titlecourse}}</p>
                 <div class="evaluate">
                     <img src="https://st.quantrimang.com/photos/image/072015/22/avatar.jpg" alt="Card image cap">
-                    <p>{{json.name}}</p>
+                    <p id="name_author">{{json.name}}</p>
                     <i class="fa fa-star co-or" style="margin-left:-40%;display:inline-block"></i>
                     <i class="fa fa-star co-or" style="display:inline-block"></i>
                     <i class="fa fa-star co-or" style="display:inline-block"></i>
@@ -905,10 +932,10 @@ footer{
                 <div class="dong3">
                     <button id="register_learn_buy" type="button" class="btn btn-danger dong33">Đăng ký học</button>
                 </div>
-                <div class="dong4">
-                    <button type="button" class="btn btn-success dong41">
-                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                        Thêm vào giỏ hàng
+                <div class="dong4" id="join_course_father">
+                    <button id="join_course"type="button" class="btn btn-success dong41">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                        Vào học 
                     </button>
                 </div>
                 <p class="dong5">Hoàn tiền trong 7 ngày nếu không hài lòng</p>
@@ -1130,225 +1157,51 @@ footer{
         <!--code web3-->
         <!--abi cả address lấy từ cloud-->
         <script>
+const name_author=document.getElementById('name_author');// account 
+alert("Xin chào các bạn đến với khóa học của "+name_author.innerText+"!"); // alert chạy trong codejs front-end thôi
+
+
+
+
             // lấy abi và address dựa trên link_access
 const data_postgre =JSON.parse(document.getElementById('data_db').innerText); // chuyển gói dữ liệu từ table thành object 
 const data_postgre_address=data_postgre.address;
 const data_postgre_abi =data_postgre.abi.abi;
-console.log(data_postgre_abi) //mảng 
 
 
-const CONTRACT_ADDRESS_Blockchain_Course="0xE5fD8917320d73d43E9cD9BA3B03A84F8C0cb530";// network kia search trong json 
-const CONTRACT_ABI_Blockchain_Course=[
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "a",
-				"type": "string"
-			}
-		],
-		"name": "Buy",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "AccountList",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "description",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "link_course",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "link_image",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "name_author",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "name_product",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "price",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	}
-];
 
-const CONTRACT_ADDRESS_manage_order="0x83923F4Be443fc37595716013B798D40cD7e154C";
-const CONTRACT_ABI_manage_order=[
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "a",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "b",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "c",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "d",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "e",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "f",
-				"type": "string"
-			}
-		],
-		"name": "Buy",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "OrderList",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "addressuser",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "link_course",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "link_image",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "name_author",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "name_product",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "price",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	}
-];
- 
+
+
  const web3= new Web3(
     Web3.givenProvider|| 'HTTP://127.0.0.1:7545'
 );
 
 
 // các biến cần dùng 
-let account;
+var account;
 const accountEl=document.getElementById('account');// account 
 
 // contract 
 const contract_blockchain_course = new web3.eth.Contract(data_postgre_abi,data_postgre_address);
-const contract_manage_order = new web3.eth.Contract(CONTRACT_ABI_manage_order,CONTRACT_ADDRESS_manage_order);
+
+
+
+// biến toàn cục => ajax
+ let account_order_ajax; 
+ var product_link_course_ajax ;
+ var product_link_image_ajax ;
+ var product_name_product_ajax ;
+ var product_name_author_ajax ;
+ var product_price_ajax ;
+
+
+// lấy dữ liệu danh sách những user sở hữu smart contract 
+// sau này, ta cần viết lại smart contract cho đúng chuẩn
+// sử dụng cơ chế mapping, check balance, đưa vào 1 address trả ra 1 đối số là balance mà user đó sở hữu.
+// cơ chế mua bán, user sau khi mua smart contract có thể mang bán nó cho 1 bên khác => viết lại smart contract
+// => Ngồi 1 buổi, đưa ra 1 smart contract chuẩn, chỉnh sửa hệ thống để phù hợp với smart contract đó 
+var balance_account=0; // done mapping 
+
 
 
 const loadProvider=async() =>{
@@ -1367,24 +1220,36 @@ const loadProvider=async() =>{
 }
 
 const buyProduct = async (product_price,product_name_author,product_name_product,product_link_image,product_link_course) => { 
-   contract_manage_order.methods.Buy(String(account),product_link_course,product_link_image,product_name_author,product_name_product,product_price).send({from: account, value: '1000000',gas: '1000000' }); 
-   var x= Number(product_price)*1e18;
+    var x= Number(product_price)*1e18/10;
    // đang bị lỗi phí gas khắc phục bằng cách thêm phí 
    // giao dịch của thằng này luôn external payable
    await contract_blockchain_course.methods.Buy(String(account)).send({from: account, value: String(x),gas: '1000000' });  // không chung 2 thằng await đc 
     }; 
 
 const set_event=async() =>{
-     const product_link_course = await contract_blockchain_course.methods.link_course().call();
-     const product_link_image = await contract_blockchain_course.methods.link_image().call();
-     const product_name_product = await contract_blockchain_course.methods.name_product().call();
-     const product_description = await contract_blockchain_course.methods.description().call();
-     const product_name_author = await contract_blockchain_course.methods.name_author().call();
-     const product_price = await contract_blockchain_course.methods.price().call();
-     // set phím bấm buy
-     const productEl=document.getElementById('register_learn_buy');
-     productEl.onclick = buyProduct.bind(null,product_price,product_name_author,product_name_product,product_link_image,product_link_course);  // ghi nhận hiện tượng click và báo lệnh 
+    account_order_ajax=account; // để cùng 1 luồng mới truyền đc tất cả 
+     var product_link_course = await contract_blockchain_course.methods.link_course().call();
+     product_link_course_ajax=product_link_course;
+     var product_link_image = await contract_blockchain_course.methods.link_image().call();
+     product_link_image_ajax =product_link_image;
+     var product_name_product = await contract_blockchain_course.methods.name_product().call();
+     product_name_product_ajax=product_name_product;
+     var product_description = await contract_blockchain_course.methods.description().call();
+     var product_name_author = await contract_blockchain_course.methods.name_author().call();
+     product_name_author_ajax=product_name_author;
+     var product_price = await contract_blockchain_course.methods.price().call();
+     product_price_ajax=product_price;
+     
+     // take data own 
+      balance_account = await contract_blockchain_course.methods.balance(account).call();
+      console.log(balance_account);
+   
  
+
+     // set phím bấm buy
+     var productEl=document.getElementById('register_learn_buy');
+     productEl.onclick = buyProduct.bind(null,product_price,product_name_author,product_name_product,product_link_image,product_link_course);  // ghi nhận hiện tượng click và báo lệnh 
+     console.log(product_price_ajax);
 }
 const main= async()=>{
   console.log("test3");
@@ -1397,8 +1262,57 @@ const main= async()=>{
     account=accounts[0];  // account đã được khai báo từ trước để phục vụ cho buyticket; và nhiều hàm được gọi tới cũng dùng thằng này
     accountEl.innerText=account;  // cài cho giá trị của thẳng html hiển thị account
     await set_event(); 
+    
 }
 main();
+
+// ajax 
+$(function () {  // tránh bị lâu ta tạo ra các biến toàn cục để hạn chế việc kết nối blc nhiều lần 
+     
+     // add product to wallet
+     //cài luôn event trong phím đăng ký học, nếu user thanh toán thì mới có thể truy cập vào khóa học
+     // tránh bỏ sót trường hợp user mua mà hàng lại không có trong giỏ hàng 
+     $('#register_learn_buy').on('click', () => {
+        $.ajax({
+            url: `/register_product`,  // truyền data qua đường dẫn 
+            method: 'POST',  // GET không truyền được data thông qua middleware 
+            data: {
+                account:account_order_ajax,
+                link:product_link_course_ajax,
+                image:product_link_image_ajax,
+                name_product:product_name_product_ajax,
+                name_author:product_name_author_ajax,
+                price:product_price_ajax
+            },
+            success: function(response) {  // nếu thành công thì trả ra thông báo
+                alert(response);
+            },
+            error: function (err) {
+            console.log(err);
+            }
+       });
+     })
+})
+
+
+// join_ course 
+$('#join_course').on('click', () => {
+   if(Number(balance_account)==1){
+        let father = $('#join_course_father');
+        father.append(`
+        <button type="button" class="btn btn-primary" style="margin-top:10px">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                Truy cập 
+                            </button>
+        `)
+        alert('Bạn đã sở hữu khóa học, chúng ta bắt đầu nào!')
+   }
+   else(
+    alert("Bạn chưa mua khóa học hoặc kết nối internet không ổn định, bạn mua và đảm bảo cường độ internet ổn định để truy cập nhé!")
+   )
+   
+
+})
 </script>
             <!--footer-->
             <footer class="sticky-top">
