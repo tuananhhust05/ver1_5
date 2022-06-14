@@ -4,9 +4,9 @@ let account_login;
 
 const client = new Client({
     host: "localhost",
-    user: "postgres",
+    user: "lms_user",
     port: 5432,
-    password: "Tuananh050901",
+    password: "123456aA@",
     database: "manage_ver1_lms"
 })
 client.connect();  // phải connect db 
