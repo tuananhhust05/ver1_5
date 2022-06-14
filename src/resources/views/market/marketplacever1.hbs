@@ -22,6 +22,8 @@
     <link rel="stylesheet" type="text/css" href="css/market.css"/>
 </head>
 <body>
+    <!--module đo kích thước màn hỉnh jquery đoạn dưới có hàm r , lặp hàm  -->
+{{!-- <div id="d1" class="sticky-top"style="top:30%;left:30%;position:fixed;color:black"></div> --}}
 
   <!--header-->
 <nav class="navbar navbar-expand-lg navbar-primary bg-primary sticky-top">
@@ -57,24 +59,71 @@
 </nav>
 
 
-
 <nav id="navbar-example2" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">  <!--id quan trọng để tham chiếu dữ liệu-->
  <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown" style="margin-left:35%">
-        <a class="nav-link dropdown-toggle"style="margin-top:2px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Products
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
-          
-          <a class="dropdown-item" href="#scrollspyHeading1">Business</a>
-          <a class="dropdown-item" href="#scrollspyHeading2">Science</a>
-          <a class="dropdown-item" href="#scrollspyHeading3">Technical</a>
-          <a class="dropdown-item" href="#scrollspyHeading4">Culture</a>
-          <a class="dropdown-item" href="#scrollspyHeading5">Language</a>
+       <div class="menu-bar-item-header">
+          <span></span>
         </div>
-      </li>
-      <li class="nav-item dropdown"style="margin-left:50px">
-        <a class="nav-link dropdown-toggle"style="margin-top:2px" href="/myorder" >
+                <!--menu-item-->
+        <div class="menu-items">
+                    <ul>
+                        <li class="menu-item"style="margin-top:40px">
+                          <i class="fa fa-language"style="display:inline-block"></i>
+                          <a href=""style="display:inline-block">Ngoại ngữ</a>
+                        </li>
+                        <li class="menu-item">
+                          <i class="fa fa-line-chart"></i>
+                          <a href="">Marketing</a>
+                        </li>
+                        <li class="menu-item">
+                          <i class="fa fa-desktop"></i>
+                          <a href="">Tin học văn phòng</a>
+                        </li>
+                        <li class="menu-item">
+                          <i class="fa fa-paint-brush"></i>
+                          <a href="">Thiết kế</a>
+                        </li>
+                        <li class="menu-item">
+                          <i class="fa fa-rocket"></i>
+                          <a href="">Kinh Doanh khởi nghiệp</a>
+                        </li>
+                        <li class="menu-item">
+                          <i class="fa fa-child"></i>
+                          <a href="">Kỹ năng mềm</a>
+                        </li>
+                        <li class="menu-item">
+                          <i class="fa fa-shopping-cart"></i>
+                          <a href="">Bán hàng</a>
+                        </li>
+                        <li class="menu-item">
+                          <i class="fa fa-code"></i>
+                          <a href="">CNTT</a>
+                        </li>
+                        <li class="menu-item">
+                          <i class="fa fa-heartbeat"></i>
+                          <a href="">Sức khỏe</a>
+                        </li>
+                        <li class="menu-item">
+                          <i class="fa fa-cutlery"></i>
+                          <a href="">Phong cách sống</a>
+                        </li>
+                        
+                    </ul>
+         </div>          
+            
+            <!--chuyển động menu-bar-item-->
+      <script>
+              // phím biến đổi menuBar cái icon
+              const menuBar=document.querySelector(".menu-bar-item-header");  // chọn thằng menu bar 
+              menuBar.addEventListener("click",function(){  //lắng nghe sự kiện click 
+              menuBar.classList.toggle("active")  // click vào khởi động class active
+              document.querySelector(".menu-items").classList.toggle("active"); // chọn và gán class active cho nó
+              })
+          
+      </script>
+      
+      <li class="nav-item dropdown"style="margin-left:50px;margin-top:15px">
+        <a class="nav-link dropdown-toggle"style="margin-top:15px;padding:-100px;" href="/myorder" >
           My odders
         </a>
       </li>
@@ -117,14 +166,7 @@
           </div>
           
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
-          
-          <a class="dropdown-item" href="#scrollspyHeading1">Business</a>
-          <a class="dropdown-item" href="#scrollspyHeading2">science</a>
-          <a class="dropdown-item" href="#scrollspyHeading3">technical</a>
-          <a class="dropdown-item" href="#scrollspyHeading4">Culture</a>
-          <a class="dropdown-item" href="#scrollspyHeading5">language</a>
-        </div>
+        
         <!--form-->
         <!--dùng sticky-top để đè lên slide-->
       </li>
@@ -132,23 +174,10 @@
         <a style="margin-top:2px;color:black;text-decoration:none" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-line-chart"></i>
           Marketing
-          <div id="listmonhoc2" class="sticky-top" style="background-color:white;position:absolute;top:-45px;left:335px;width:350px;height:350px;box-shadow: 2px 2px 2px #999999">
-              <div id="monhoc"style="margin-top:10px">Digital Marketing</div>
-              <div id="monhoc"style="margin-top:10px">Agency Marketing</div>
-              <div id="monhoc"style="margin-top:10px">Marketing</div>
-              <div id="monhoc"style="margin-top:10px">Marketing managing</div>
-              
-          </div>
+          
           
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
-          
-          <a class="dropdown-item" href="#scrollspyHeading1">Business</a>
-          <a class="dropdown-item" href="#scrollspyHeading2">science</a>
-          <a class="dropdown-item" href="#scrollspyHeading3">technical</a>
-          <a class="dropdown-item" href="#scrollspyHeading4">Culture</a>
-          <a class="dropdown-item" href="#scrollspyHeading5">language</a>
-        </div>
+        
 
       </li>
       <li class="nav-item dropdown" style="display:block;margin-top:10px">
@@ -156,110 +185,62 @@
           <i class="fa fa-desktop"></i>
           Tin học văn phòng
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
-          
-          <a class="dropdown-item" href="#scrollspyHeading1">Business</a>
-          <a class="dropdown-item" href="#scrollspyHeading2">science</a>
-          <a class="dropdown-item" href="#scrollspyHeading3">technical</a>
-          <a class="dropdown-item" href="#scrollspyHeading4">Culture</a>
-          <a class="dropdown-item" href="#scrollspyHeading5">language</a>
+       
       </li>
       <li class="nav-item dropdown" style="display:block;margin-top:10px">
         <a style="margin-top:2px;color:black;text-decoration:none" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-paint-brush"></i>
           Thiết kế
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
-          
-          <a class="dropdown-item" href="#scrollspyHeading1">Business</a>
-          <a class="dropdown-item" href="#scrollspyHeading2">science</a>
-          <a class="dropdown-item" href="#scrollspyHeading3">technical</a>
-          <a class="dropdown-item" href="#scrollspyHeading4">Culture</a>
-          <a class="dropdown-item" href="#scrollspyHeading5">language</a>
+        
       </li>
       <li class="nav-item dropdown" style="display:block;margin-top:10px">
         <a style="margin-top:2px;color:black;text-decoration:none" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-rocket"></i>
           Kinh doanh khởi nghiệp
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
-          
-          <a class="dropdown-item" href="#scrollspyHeading1">Business</a>
-          <a class="dropdown-item" href="#scrollspyHeading2">science</a>
-          <a class="dropdown-item" href="#scrollspyHeading3">technical</a>
-          <a class="dropdown-item" href="#scrollspyHeading4">Culture</a>
-          <a class="dropdown-item" href="#scrollspyHeading5">language</a>
+       
       </li>
        <li class="nav-item dropdown" style="display:block;margin-top:10px">
         <a style="margin-top:2px;color:black;text-decoration:none" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-child"></i>
           Kỹ năng mềm
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
-          
-          <a class="dropdown-item" href="#scrollspyHeading1">Business</a>
-          <a class="dropdown-item" href="#scrollspyHeading2">science</a>
-          <a class="dropdown-item" href="#scrollspyHeading3">technical</a>
-          <a class="dropdown-item" href="#scrollspyHeading4">Culture</a>
-          <a class="dropdown-item" href="#scrollspyHeading5">language</a>
+        
       </li>
       <li class="nav-item dropdown" style="display:block;margin-top:10px">
         <a style="margin-top:2px;color:black;text-decoration:none" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-shopping-cart"></i>
           Bán hàng
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
-          
-          <a class="dropdown-item" href="#scrollspyHeading1">Business</a>
-          <a class="dropdown-item" href="#scrollspyHeading2">science</a>
-          <a class="dropdown-item" href="#scrollspyHeading3">technical</a>
-          <a class="dropdown-item" href="#scrollspyHeading4">Culture</a>
-          <a class="dropdown-item" href="#scrollspyHeading5">language</a>
+        
       </li>
       <li class="nav-item dropdown" style="display:block;margin-top:10px">
         <a style="margin-top:2px;color:black;text-decoration:none" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-code"></i>
           CNTT
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
-          
-          <a class="dropdown-item" href="#scrollspyHeading1">Business</a>
-          <a class="dropdown-item" href="#scrollspyHeading2">science</a>
-          <a class="dropdown-item" href="#scrollspyHeading3">technical</a>
-          <a class="dropdown-item" href="#scrollspyHeading4">Culture</a>
-          <a class="dropdown-item" href="#scrollspyHeading5">language</a>
+        
       </li>
       <li class="nav-item dropdown" style="display:block;margin-top:10px">
         <a style="margin-top:2px;color:black;text-decoration:none" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-heartbeat"></i>
           Sức khỏe
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
-          
-          <a class="dropdown-item" href="#scrollspyHeading1">Business</a>
-          <a class="dropdown-item" href="#scrollspyHeading2">science</a>
-          <a class="dropdown-item" href="#scrollspyHeading3">technical</a>
-          <a class="dropdown-item" href="#scrollspyHeading4">Culture</a>
-          <a class="dropdown-item" href="#scrollspyHeading5">language</a>
+       
       </li>
       <li class="nav-item dropdown" style="display:block;margin-top:10px">
         <a style="margin-top:2px;color:black;text-decoration:none" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-cutlery"></i>
           Phong cách sống 
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown"data-toggle="colapse">
-          
-          <a class="dropdown-item" href="#scrollspyHeading1">Business</a>
-          <a class="dropdown-item" href="#scrollspyHeading2">science</a>
-          <a class="dropdown-item" href="#scrollspyHeading3">technical</a>
-          <a class="dropdown-item" href="#scrollspyHeading4">Culture</a>
-          <a class="dropdown-item" href="#scrollspyHeading5">language</a>
+        
       </li>
       <!--Hover-->
     
     
   </div>  
-  <div class="col-sm-12 col-lg-7" style="height:400px">
+  <div id="show_slide"class="col-sm-12 col-lg-7" style="height:400px">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -294,23 +275,35 @@
    </div>
  </div>
 
-<!--điều chỉnh kích thước css theo kích thước màn hình-->
-<!--điều chỉnh hiển thị hay không hiển thị-->
+
+<!--điều chỉnh hiển thị hay không hiển thị theo sự thay đổi kích thước-->
 <script>
+  // user không mấy khi thay đổi kích thước, đăng nhập vào phát là set giao diện luôn
+    var x=$(window).width();
+         var y=$(window).height();
+         
+         if(Number(x)<1500){
+            document.getElementById("element").style.display = 'none';
+            document.getElementById("decorateslide").style.display = 'none';
+         }
+         if(Number(x)>=1500){
+            document.getElementById("element").style.display = 'inline-block';
+            document.getElementById("decorateslide").style.display="inline-block"
+         }
     $(document).ready(function(e){
         $(window).resize(ResizeHappend);
     })
      function ResizeHappend(){
          var x=$(window).width();
          var y=$(window).height();
-        
+         
          if(Number(x)<1500){
             document.getElementById("element").style.display = 'none';
             document.getElementById("decorateslide").style.display = 'none';
          }
          if(Number(x)>=1500){
-            document.getElementById("element").style.display = 'flex';
-            document.getElementById("decorateslide").style.display="flex"
+            document.getElementById("element").style.display = 'inline-block';
+            document.getElementById("decorateslide").style.display="inline-block"
          }
      }
 </script>
